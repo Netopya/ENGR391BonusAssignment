@@ -36,6 +36,8 @@ namespace ENGR391BonusAssignment
 
             A = (p * V / m - 1.0) * g;
             InitializeComponent();
+
+            listView1.Columns[1].Width = 160;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,35 +52,28 @@ namespace ENGR391BonusAssignment
                 intervals[i] = i + 1;
                 values[i] = SecantCalculation(1, 2, i + 1);
                 chart1.Series[0].Points.AddXY(intervals[i], values[i]);
+                listView1.Items.Add(new ListViewItem(new string[] { intervals[i].ToString(), values[i].ToString() }));
             }
-
+            Console.WriteLine(string.Join(System.Environment.NewLine, values));
             
         }
 
         private double SecantCalculation(double guess1, double guess2, int intervals)
         {
-            double fcurrent;
-            double flast;
+            double fcurrent, flast, next;
             double last = guess1;
             double current = guess2;
-            double next;
             flast = ZeroedFunction(last, intervals);
-            int iterations = 0;
-
 
             while(Math.Abs((current - last)/current) > 0.00001)
             {
-                iterations++;
                 fcurrent = ZeroedFunction(current, intervals);
                 next = current - fcurrent * (current - last) / (fcurrent - flast);
                 flast = fcurrent;
                 last = current;
                 current = next;
-
-                Console.WriteLine("Current guess: " + current);
             }
 
-            Console.WriteLine("Iterations: " + iterations);
             return current;
         }
 
@@ -107,6 +102,11 @@ namespace ENGR391BonusAssignment
         private double EstimatedGaussFunctioni(double xi, double a, double b)
         {
             return (1 - Math.Exp(-(c / m) * ((b - a) * xi + a + b) / 2.0)) * (b - a) / 2.0;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
