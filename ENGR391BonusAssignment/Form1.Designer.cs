@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,18 +40,18 @@
             this.button2 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -64,24 +64,25 @@
             // 
             // chart1
             // 
-            chartArea3.AxisX.Title = "Intervals";
-            chartArea3.AxisY.IsStartedFromZero = false;
-            chartArea3.AxisY.Title = "Estimation of Time t";
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.Title = "Intervals";
+            chartArea1.AxisY.IsStartedFromZero = false;
+            chartArea1.AxisY.Title = "Estimation of Time t";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(638, 229);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(638, 231);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title3.Name = "Title1";
-            title3.Text = "Gauss Quadrature Estimation of Balloon Acceleration";
-            this.chart1.Titles.Add(title3);
+            title1.Name = "Title1";
+            title1.Text = "Gauss Quadrature with Secant Method Estimation of Balloon Acceleration";
+            this.chart1.Titles.Add(title1);
             // 
             // tableLayoutPanel1
             // 
@@ -94,8 +95,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(904, 236);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 236F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(904, 237);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -111,7 +112,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 230);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 231);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // listView1
@@ -122,7 +123,7 @@
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(248, 194);
+            this.listView1.Size = new System.Drawing.Size(248, 195);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -139,7 +140,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(80, 203);
+            this.button2.Location = new System.Drawing.Point(80, 204);
             this.button2.Margin = new System.Windows.Forms.Padding(80, 3, 80, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 23);
@@ -163,7 +164,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer1.Size = new System.Drawing.Size(904, 475);
-            this.splitContainer1.SplitterDistance = 235;
+            this.splitContainer1.SplitterDistance = 234;
             this.splitContainer1.TabIndex = 2;
             // 
             // groupBox1
@@ -187,7 +188,71 @@
             this.groupBox1.Size = new System.Drawing.Size(695, 197);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Estimation Parameters";
+            this.groupBox1.Text = "Acceleration of a Hot-Air Balloon";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(92, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Distance d (in meters):";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(191, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(13, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(84, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(13, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "1";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(210, 61);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(70, 20);
+            this.textBox4.TabIndex = 6;
+            this.textBox4.Text = "2";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(210, 93);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(70, 20);
+            this.textBox5.TabIndex = 5;
+            this.textBox5.Text = "1000";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(103, 61);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(70, 20);
+            this.textBox3.TabIndex = 5;
+            this.textBox3.Text = "1";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Initial guesses:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -212,11 +277,11 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(305, 168);
+            this.button1.Location = new System.Drawing.Point(294, 145);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(106, 46);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Go!";
+            this.button1.Text = "Calculate Time";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -239,70 +304,6 @@
             this.textBox1.Text = "1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Initial guesses:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(103, 61);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(70, 20);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "1";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(210, 61);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(70, 20);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.Text = "2";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "1";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(191, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "2";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Distance d (in meters):";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(210, 93);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(70, 20);
-            this.textBox5.TabIndex = 5;
-            this.textBox5.Text = "1000";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 

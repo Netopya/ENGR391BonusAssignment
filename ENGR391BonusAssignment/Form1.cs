@@ -25,7 +25,7 @@ namespace ENGR391BonusAssignment
         const double c = 225; //drag coefficient
         double[] C = {0.5555556, 0.8888889, 0.5555556}; //Coefficient Ci (weights)
         double[] x = { -0.77456667, 0, 0.77459667 }; //Gauss points xi
-        double distainceValue; //solve for a d
+        double distanceValue; //solve for a d
 
         readonly double V; //Volume
         readonly double A; //A values
@@ -43,23 +43,14 @@ namespace ENGR391BonusAssignment
             //increase column width to display title
             listView1.Columns[1].Width = 160;
 
+            //colapse view with graph
             splitContainer1.Panel2Collapsed = true;
 
             
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            int[] intervals = new int[30];
-            double[] values = new double[30];
-
-            for (int i = 0; i < 30; i++)
-            {
-                intervals[i] = i + 1;
-                values[i] = SecantCalculation(1, 2, i + 1);
-                chart1.Series[0].Points.AddXY(intervals[i], values[i]);
-                listView1.Items.Add(new ListViewItem(new string[] { intervals[i].ToString(), values[i].ToString() }));
-            }            
+        {  
         }
 
         private double SecantCalculation(double guess1, double guess2, int intervals)
@@ -83,7 +74,7 @@ namespace ENGR391BonusAssignment
 
         private double ZeroedFunction(double t, int intervals)
         {
-            return 1000.0 - EstimateGaussFunction(t, intervals);
+            return distanceValue - EstimateGaussFunction(t, intervals);
         }
 
         private double EstimateGaussFunction(double t, int intervals)
@@ -115,6 +106,38 @@ namespace ENGR391BonusAssignment
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int low, high;
+            double guess1, guess2;
+            try
+            {
+                low = int.Parse(textBox1.Text) - 1;
+                high = int.Parse(textBox2.Text);
+                guess1 = double.Parse(textBox3.Text);
+                guess2 = double.Parse(textBox4.Text);
+                distanceValue = double.Parse(textBox5.Text);
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show("An error has occured: " + ex.Message);
+                return;
+            }
+
+            chart1.Series[0].Points.Clear();
+            listView1.Items.Clear();
+
+            int[] intervals = new int[high];
+            double[] values = new double[high];
+
+            for (int i = low; i < high; i++)
+            {
+                intervals[i] = i + 1;
+                values[i] = SecantCalculation(guess1, guess2, i + 1);
+                chart1.Series[0].Points.AddXY(intervals[i], values[i]);
+                listView1.Items.Add(new ListViewItem(new string[] { intervals[i].ToString(), values[i].ToString() }));
+                Console.WriteLine(intervals[i].ToString() + "\t" + values[i].ToString());
+            } 
+            
+            
             splitContainer1.Panel2Collapsed = false;
             splitContainer1.Panel1Collapsed = true;
         }
