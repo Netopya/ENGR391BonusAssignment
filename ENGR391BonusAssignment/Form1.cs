@@ -18,32 +18,33 @@ namespace ENGR391BonusAssignment
      * */
     public partial class Form1 : Form
     {
-        const double g = 9.81;
-        const double m = 600;
-        const double p = 0.25;
-        const double diameter = 20;
-        const double c = 225;
-        double[] C = {0.5555556, 0.8888889, 0.5555556};
-        double[] x = { -0.77456667, 0, 0.77459667 };
+        const double g = 9.81; //gravity
+        const double m = 600; //mass
+        const double p = 0.25; //rho
+        const double diameter = 20; //diameter
+        const double c = 225; //drag coefficient
+        double[] C = {0.5555556, 0.8888889, 0.5555556}; //Coefficient Ci (weights)
+        double[] x = { -0.77456667, 0, 0.77459667 }; //Gauss points xi
 
-        readonly double V;
-        readonly double A;
+        readonly double V; //Volume
+        readonly double A; //A values
 
         public Form1()
         {
             //calculate volume
             V = (4.0 / 3.0) * Math.PI * Math.Pow(diameter / 2.0, 3);
 
+            //calculate A
             A = (p * V / m - 1.0) * g;
+
             InitializeComponent();
 
+            //increase column width to display title
             listView1.Columns[1].Width = 160;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("Result: " + SecantCalculation(1, 2, 1));
-
             int[] intervals = new int[30];
             double[] values = new double[30];
 
@@ -53,9 +54,7 @@ namespace ENGR391BonusAssignment
                 values[i] = SecantCalculation(1, 2, i + 1);
                 chart1.Series[0].Points.AddXY(intervals[i], values[i]);
                 listView1.Items.Add(new ListViewItem(new string[] { intervals[i].ToString(), values[i].ToString() }));
-            }
-            Console.WriteLine(string.Join(System.Environment.NewLine, values));
-            
+            }            
         }
 
         private double SecantCalculation(double guess1, double guess2, int intervals)
