@@ -14,7 +14,7 @@ namespace ENGR391BonusAssignment
      *  Add comments
      *  Add table of values
      *  Add chart title and legend 
-     * 
+     *  CREATE GUI
      * */
     public partial class Form1 : Form
     {
@@ -25,6 +25,7 @@ namespace ENGR391BonusAssignment
         const double c = 225; //drag coefficient
         double[] C = {0.5555556, 0.8888889, 0.5555556}; //Coefficient Ci (weights)
         double[] x = { -0.77456667, 0, 0.77459667 }; //Gauss points xi
+        double distainceValue; //solve for a d
 
         readonly double V; //Volume
         readonly double A; //A values
@@ -41,6 +42,10 @@ namespace ENGR391BonusAssignment
 
             //increase column width to display title
             listView1.Columns[1].Width = 160;
+
+            splitContainer1.Panel2Collapsed = true;
+
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -104,6 +109,43 @@ namespace ENGR391BonusAssignment
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            splitContainer1.Panel2Collapsed = false;
+            splitContainer1.Panel1Collapsed = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            splitContainer1.Panel2Collapsed = true;
+            splitContainer1.Panel1Collapsed = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
